@@ -33,14 +33,39 @@ This project implements a simple neural network classifier for the MNIST dataset
    ```
 
 ---
+## Description
 
+1. **Dataset Loading**:
+   - The code attempts to load the MNIST dataset using three different sources:
+     - `fetch_openml` from scikit-learn.
+     - `load_digits` from scikit-learn as a fallback.
+     - Keras MNIST dataset if the first two fail.
+   - The dataset is loaded with error handling to ensure the program continues by falling back to alternative datasets when needed.
+
+2. **Data Preprocessing**:
+   - The pixel values are normalized using `StandardScaler` from scikit-learn.
+   - The dataset is split into training and testing sets using `train_test_split`.
+
+3. **Model Training**:
+   - A neural network model (`MLPClassifier`) is defined with one hidden layer of 128 neurons, ReLU activation, and the Adam optimizer.
+   - The model is trained using 5-fold cross-validation and the training data.
+
+4. **Model Evaluation**:
+   - The model is evaluated on the test set to calculate accuracy.
+   - The training loss curve is plotted to visualize the model's performance during training.
+
+5. **Flask API**:
+   - A simple Flask API is set up with a `/predict` endpoint that accepts a POST request with a JSON object containing the input data (flattened 28x28 image).
+   - The API returns the predicted digit based on the trained model.
+
+---
 ## Usage
 
 ### Training the Model
 
 1. Run the script to train the model:
    ```bash
-   python NN.py
+   python mnist-classifier.py
    ```
 
 2. During training, the script will:
@@ -52,7 +77,7 @@ This project implements a simple neural network classifier for the MNIST dataset
 
 1. Start the Flask server:
    ```bash
-   python NN.py
+   python mnist-classifier.py
    ```
 
 2. Use an API testing tool (e.g., Postman) or a Python script to send POST requests to the `/predict` endpoint.
@@ -75,7 +100,7 @@ This project implements a simple neural network classifier for the MNIST dataset
 
 ```
 mnist-classifier/
-├── NN.py  # Main script
+├── mnist_classifier.py  # Main script
 ├── README.md            # Project documentation
 ```
 
