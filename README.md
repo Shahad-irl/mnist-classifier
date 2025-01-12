@@ -23,7 +23,7 @@ This project implements a simple neural network classifier for the MNIST dataset
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/mnist-classifier.git
+   git clone https://github.com/Shahad-irl/mnist-classifier.git
    cd mnist-classifier
    ```
 
@@ -40,7 +40,7 @@ This project implements a simple neural network classifier for the MNIST dataset
 
 1. Run the script to train the model:
    ```bash
-   python mnist_classifier.py
+   python NN.py
    ```
 
 2. During training, the script will:
@@ -52,7 +52,7 @@ This project implements a simple neural network classifier for the MNIST dataset
 
 1. Start the Flask server:
    ```bash
-   python mnist_classifier.py
+   python NN.py
    ```
 
 2. Use an API testing tool (e.g., Postman) or a Python script to send POST requests to the `/predict` endpoint.
@@ -75,17 +75,26 @@ This project implements a simple neural network classifier for the MNIST dataset
 
 ```
 mnist-classifier/
-├── mnist_classifier.py  # Main script
+├── NN.py  # Main script
 ├── README.md            # Project documentation
 ```
 
 ---
-
 ## Results
 
 - **Cross-Validation Accuracy**: Displayed during training.
+
 - **Test Accuracy**: Achieved after training, evaluated on a separate test set.
+
 - **Training Loss Curve**: Plots the loss during training to monitor performance.
+  - Expected output:
+    ```
+    Cross-validation scores: [0.84375    0.84722222 0.80836237 0.84320557 0.82926829]
+    Average cross-validation score: 0.834361691831204
+    Test Accuracy: 89.17%
+    ```
+    ![Training Loss Curve](https://github.com/user-attachments/assets/ece0a553-3ac6-4d20-8b80-f00bae4e63b2)
+
 
 ---
 
@@ -96,6 +105,7 @@ mnist-classifier/
 
 ---
 
+
 ## Future Improvements
 
 - Enhance the neural network by adding more layers or using a deep learning framework (e.g., TensorFlow or PyTorch).
@@ -103,3 +113,8 @@ mnist-classifier/
 - Dockerize the Flask API for easier deployment.
 
 ---
+
+## Author
+
+**Shahad-irl**  
+A computer engineering graduate passionate about artificial intelligence and machine learning.
